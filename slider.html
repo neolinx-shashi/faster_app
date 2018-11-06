@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>UKSH</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/wickedpicker.min.css">
+	<!--<link rel="stylesheet" type="text/css" href="css/mdb.min.css">-->
+	<link rel="stylesheet" type="text/css" href="css/mdtimepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="css/fa-brands.min.css">
+	<link rel="stylesheet" type="text/css" href="css/fa-solid.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<link rel="stylesheet" href="css/jquery.timepicker.min.css">
+	<!-- Import Font Awesome -->
+	<!-- <script type="text/javascript" src="js/fontawesome-all.min.js"></script> -->
+</head>
+<body>
+	<form method="post" onsubmit="return false">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			
+			<div id="page" class="swiper-slide 1" page="1">
+				<div class="content">
+
+					<div class="banner-section">
+						<h1>Angaben zum Patienten</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid">
+								<div class="gender">
+									<h3 class="mb-5 mt-4 font-weight-bold">Geschlecht</h3>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input patient_gender" type="radio" autocomplete="off" value="M" name="gender">Männlich
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input patient_gender" type="radio" autocomplete="off" value="F" name="gender">Weiblich
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+								<div class="age">
+									<h3 class="mb-5 mt-4 font-weight-bold">Alter</h3>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label md-form">
+									        <input class="form-check-input patient_age" type="radio" autocomplete="off" name="age" value="known">
+									        <input class="form-control age_no" type="number" name="age_no">
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input patient_age" type="radio" autocomplete="off" value="Unbek" name="age">Unbek
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+								<div class="pre-state">
+									<h3 class="mb-5 mt-4 font-weight-bold">Vorzustand</h3>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input state" type="radio" checked autocomplete="off" value="Selbstversorger" name="state">Selbstversorger
+									    </label>
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input state" type="radio" autocomplete="off"  value="Teilweise hilfsbedürftig" name="state">Teilweise hilfsbedürftig
+									    </label>
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input state" type="radio" autocomplete="off" value="Ständig pflegebedürftig" name="state">Ständig pflegebedürftig
+									    </label>
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input state" type="radio" autocomplete="off" value="Unbekannt" name="state">Unbekannt
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide 2" page="2">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Symptomverlauf</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="observed">
+									<h3 class="mb-5 mt-4 font-weight-bold">Beginn beobachtet?</h3>
+									<small>Wurde der Beginn der Symptome von einem Zeugen beobachtet oder kann der Patient selbst den genauen Zeitpunkt benennen?</small>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input attack_observed" type="radio" autocomplete="off" value="Ja" name="observed">Ja
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input attack_observed" type="radio" autocomplete="off" value="Nein" name="observed">Nein
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+								<div class="time-yes">
+									<h3 class="mb-5 mt-4 font-weight-bold">Falls Ja:</h3>
+									<small>Zeitpunkt des Beginns der Symptome</small>
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label md-form">
+									        <div class="form-inline">
+									        	<input placeholder="Selected time" type="number" id="input_starttime" class="form-control " name="time_yes" >
+									        	<button type="button" class="btn btn-next"><i class="fa fa-angle-right"></i></button>
+									        </div>
+									    </label>
+										                    
+
+									</div>
+									<!--Radio butons-->
+								</div>
+								<div class="time-no">
+									<h3 class="mb-5 mt-4 font-weight-bold">Falls Nein:</h3>
+									<small>Zeitpunkt, zu dem der Patient zuletzt sicher gesund gesehen wurde</small>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label md-form">
+									        <div class="form-inline">
+									        	<input placeholder="Selected time" type="number" id="last_fine" class="form-control" name="last_fine">
+									        	<button type="button" class="btn btn-next"><i class="fa fa-angle-right"></i></button>
+									        </div>
+									    </label>
+									    <label class="btn btn-cyan btn-rounded form-check-label symptom-unknown">
+									        <input class="form-check-input time_no" type="radio" autocomplete="off" value="Unbekannt" name="time_no">Unbekannt
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide 7" page="7">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Medikation</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+								<div class="medication-detected">
+									<h3 class="mb-5 mt-4 font-weight-bold">Medikation erfasst?</h3>
+									<small>Verpackung, Blister oder Medikationsplan mitführen</small>
+
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+										<label class="btn btn-cyan btn-rounded form-check-label">
+											<input class="form-check-input medication" type="radio" autocomplete="off" value="Ja" name="medication">Ja
+										</label>
+
+										<label class="btn btn-cyan btn-rounded form-check-label">
+											<input class="form-check-input medication" type="radio" autocomplete="off" value="Keine Vormedikation" name="medication">Keine Vormedikation
+										</label>
+
+										<label class="btn btn-cyan btn-rounded form-check-label">
+											<input class="form-check-input medication" type="radio" autocomplete="off" value="Medikation Unbekannt" name="medication">Medikation Unbekannt
+										</label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide 3" page="3">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Antikoagulanzien</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="anticoagulant">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Beginn beobachtet?</h3> -->
+									<small>Nimmt der Patient Antikoagulanzien (Blutverdünner) ein?</small>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input anticoag" type="radio" autocomplete="off" value="Ja" name="anticoag">Ja
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input anticoag" type="radio" autocomplete="off" value="Nein" name="anticoag">Nein
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input anticoag" type="radio" autocomplete="off" value="Unbekannt" name="anticoag">Unbekannt
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+								<div class="if-so">
+									<h3 class="mb-5 mt-4 font-weight-bold">Falls Ja:</h3>
+									<small>Zeitpunkts des Beginns der Symptome</small>
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+									    
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input anticoag_name" type="radio" checked autocomplete="off" value="Marcumar" name="anticoag_name">Marcumar®
+											<small>auch bezeichnet als: Marcuphen®<br/>
+												Falithrom®<br/>
+												Phenpro®
+											</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input anticoag_name" type="radio" autocomplete="off" value="Eliquis" name="anticoag_name">Eliquis®
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input anticoag_name" type="radio" autocomplete="off" value="Lixiana" name="anticoag_name">Lixiana®
+									    </label> 
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input anticoag_name" type="radio" autocomplete="off" value="Pradaxa" name="anticoag_name">Pradaxa®
+									    </label> 
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input anticoag_name" type="radio" autocomplete="off" value="Xarelto" name="anticoag_name">Xarelto®
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input anticoag_name" type="radio" autocomplete="off" value="Andere" name="anticoag_name">Andere
+									        <div class="form-inline">
+									        	<input type="text" name="anticoag_name_x" class="form-control anticoag_name_x">
+									        	<button type="button" class="btn-anticloag"><i class="fa fa-angle-right"></i></button>
+									        </div>
+									        <!--<input name="anticoag_name_x" class="anticoag_name_x form_control" type="text" />-->
+									    </label>            
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide 4" page="4">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Ergänzende Angaben</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+
+
+								<div class="tel-no">
+									<h3 class="mb-5 mt-4 font-weight-bold">Tel.-Nr. von Angehörigen erfasst?</h3>
+									<small>Sofern verfügbar. <br/>Angehörige sollen hierüber telefonisch erreichbar sein und auf Rückruf warten!</small>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input tel_no" type="radio" checked autocomplete="off" value="Ja" name="relative_no">Ja
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input tel_no" type="radio" autocomplete="off" value="Nein" name="relative_no">Nein
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input tel_no" type="radio" autocomplete="off" value="Unbekannt" name="relative_no">Unbekannt
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+
+								<div class="doctor-record">
+									<h3 class="mb-5 mt-4 font-weight-bold">Hausarzt erfasst?</h3>
+									<small>(sofern verfügbar)</small>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input doctor_record" type="radio" checked autocomplete="off" value="Ja" name="doctor_record">Ja
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input doctor_record" type="radio" autocomplete="off" value="Nein" name="doctor_record">Nein
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input doctor_record" type="radio" autocomplete="off" value="Unbekannt" name="doctor_record">Unbekannt
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide 5"  page="5">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Ergänzende Angaben</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="impact-trauma">
+									<h3 class="mb-5 mt-4 font-weight-bold">Sturz oder Anpralltrauma des Kopfes?</h3>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input impact_trauma" type="radio" autocomplete="off" value="Ja" name="impact_trauma">Ja
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input impact_trauma" type="radio" autocomplete="off" value="Nein" name="impact_trauma">Nein
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input impact_trauma" type="radio" autocomplete="off" value="Unbekannt" name="impact_trauma">Unbekannt
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+
+								<div class="haemorrhage">
+									<h3 class="mb-5 mt-4 font-weight-bold">Zustand nach Hirnblutung in der Vorgeschichte?</h3>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input p_haemorrhage" type="radio" checked autocomplete="off" value="Ja" name="haemorrhage">Ja
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input p_haemorrhage" type="radio" autocomplete="off" value="Nein" name="haemorrhage">Nein
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input p_haemorrhage" type="radio" autocomplete="off" value="Unbekannt" name="haemorrhage">Unbekannt
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+
+								<div class="bleeding-disorder">
+									<h3 class="mb-5 mt-4 font-weight-bold">Bekanntes aktives Blutungsleiden?</h3>
+									<small>(z.B. Magen-Darm-Blutung innerhalb der letzten 3 Monate; bekannte Ösophagusvarizen, o.a.)</small>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input bleeding_disorder" type="radio" checked autocomplete="off" value="Ja" name="bleeding_disorder">Ja
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input bleeding_disorder" type="radio" autocomplete="off" value="Nein" name="bleeding_disorder">Nein
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input bleeding_disorder" type="radio" autocomplete="off" value="Unbekannt" name="bleeding_disorder">Unbekannt
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Prüfung des Bewusstseins</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="examination">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Sprechen Sie den Patienten laut an, rütteln Sie ihn fest an der Schulter, setzen Sie ggf. einen leichten Schmerzreiz.</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" score="0" name="consciousness">Normalbefund
+									        <small class="small">Der Patient ist wach.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Somnolenter Patient" score="1" name="consciousness">Somnolenter Patient
+									        <small class="small">Müder Patient, schläft nach Ansprache/Stimulation wieder ein.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Keine Reaktion" score="2" name="consciousness">Keine Reaktion
+									        <small class="small">Koma odKeine Reaktion er kein Öffnen der Augen oder nur ungezielte Abwehrbewegungen.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Orientierung</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="orientation">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Fragen Sie den Patienten nach seinem Alter und dem aktuellen Monat.</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" score="0" name="orientation">Normalbefund
+									        <small class="small">2 korrekte Antworten.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="1 korrekte Antwort" score="1" name="orientation">1 korrekte Antwort
+									        <!-- <small class="small">Müder Patient, schläft nach Ansprache/Stimulation wieder ein.</small> -->
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Keine korrekte Antwort" score="2" name="orientation">Keine korrekte Antwort
+									        <small class="small">Patient antwortet falsch oder Patient ist stumm (z.B. aufgrund Koma, schwerer Sprachstörung, Intubation o.ä.)</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Kooperation</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="cooperation">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Lassen Sie den Patienten 2 Aufforderungen befolgen: „Schließen Sie eine Faust!“ (nicht-gelähmte Seite), „Schließen Sie die Augen!“</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" score="0" name="cooperation">Normalbefund
+									        <small class="small">Patient befolgt beide Aufforderungen korrekt.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="1 Aufforderung korrekt befolgt" score="1" name="cooperation">1 Aufforderung korrekt befolgt
+									        <!-- <small class="small">Müder Patient, schläft nach Ansprache/Stimulation wieder ein.</small> -->
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Keine Aufforderung korrekt befolgt" score="2" name="cooperation">Keine Aufforderung korrekt befolgt
+									        <small class="small">Einschließlich: Fehlende Mitarbeit infolge Koma oder schwerer Sprachstörung.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Blickwendung</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="eye-movement">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Beobachten Sie den Patienten. Prüfen Sie ggf., ob der Patient dem Untersucher mit den Augen zu beiden Seiten folgt (ggf. unter Fixieren des Kopfes).
+									</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" score="0" name="eye_movement">Normalbefund
+									        <small class="small">Keine Blickwendung</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Blickwendung" score="2" name="eye_movement">Blickwendung
+											<small class="small">Der Patient schaut fixiert zu einer Seite oder zeigt eine deutliche Tendenz, zu einer Seite zu blicken. </small>
+										</label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Mimik</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="facial-expression">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Fordern Sie den Patienten auf, zu Lächeln oder die Zähne zu zeigen.</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" score="0" name="facial_expression">Normalbefund
+									        <small class="small">Symmetrische Bewegung des Gesichtes.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Leichte Asymmetrie" score="1" name="facial_expression">Leichte Asymmetrie
+									        <small class="small">Leichte einseitige Lähmung einer Gesichtshälfte oder die Gesichtsbewegungen erscheinen asymmetrisch .</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Deutliche Asymmetrie" score="2" name="facial_expression">Deutliche Asymmetrie
+									        <small class="small">Z.B. deutlich einseitige Lähmung Gesichtes.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Armmotorik</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="armmotorik two-column">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Fordern Sie den Patienten auf, gleichzeitig beide Arme für 10 Sekunden nach vorn zu strecken (ca. 45°). Beide Seiten müssen beurteilt werden. Bei Sprachstörung bringen Sie die Arme passiv in diese Position.</p>
+									<div class="row">
+										<div class="col-sm-6 col-6 left" side="left">
+											<!--Radio butons-->
+											<div class="btn-group" data-toggle="buttons">
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Normal rechts" score="0" name="armmotorik_rechts">Normal rechts
+											        <small class="small">Kein Absinken innerhalb von ca. 10 Sekunden.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Absinken rechts" score="1" name="armmotorik_rechts">Absinken rechts
+											        <small class="small">Absinken des Armes ohne Berühren der Unterlage.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Kein Anheben rechts" score="2" name="armmotorik_rechts">Kein Anheben rechts
+											        <small class="small">Der Arm sinkt auf die Unterlage oder der Patient kann den Arm nicht von der Unterlage anheben.<br/><br/></small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Nicht beurteilbar rechts" score="0" name="armmotorik_rechts">Nicht beurteilbar rechts
+											        <small class="small">Nur wählen bei Amputation, Versteifung o.ä.</small>
+											    </label>
+
+											</div>
+											<!--Radio butons-->
+										</div>
+										<div class="col-sm-6 col-6 right" side="right">
+											<!--Radio butons-->
+											<div class="btn-group" data-toggle="buttons">
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Normal links" score="0" name="armmotorik_links">Normal links
+											        <small class="small">Kein Absinken innerhalb von ca. 10 Sekunden.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Absinken links" score="1" name="armmotorik_links">Absinken links
+											        <small class="small">Absinken des Armes, jedoch noch ohne Berühren der Unterlage.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Kein Anheben links" score="2" name="armmotorik_links">Kein Anheben links
+											        <small class="small">Der Arm sinkt auf die Unterlage oder der Patient kann den Arm nicht von der Unterlage anheben oder der Arm ist vollständig gelähmt.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Nicht beurteilbar links" score="0" name="armmotorik_links">Nicht beurteilbar links
+											        <small class="small">Nur wählen bei Amputation, Versteifung o.ä.</small>
+											    </label>
+
+											</div>
+											<!--Radio butons-->
+										</div>
+									</div>
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Beinmotorik</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="motor-skills  two-column">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Fordern Sie den Patienten auf, beide Beine einzeln mit ca. 30° für 5 Sekunden anzuheben. Beide Seiten müssen beurteilt werden. Bei Sprachstörung bringen Sie die Beine einzeln passiv in diese Position.</p>
+									<div class="row">
+										<div class="col-sm-6 col-6 left" side="left">
+											<!--Radio butons-->
+											<div class="btn-group" data-toggle="buttons">
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Normal rechts" score="0" name="motor_skill_rechts">Normal rechts
+											        <small class="small">Kein Absinken innerhalb von ca. 5 Sekunden.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Absinken rechts" score="1" name="motor_skill_rechts">Absinken rechts
+											        <small class="small">Absinken des Armes ohne Berühren der Unterlage.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Kein Anheben rechts" score="2" name="motor_skill_rechts">Kein Anheben rechts
+											        <small class="small">Das Bein sinkt auf die Unterlage oder der Patient kann das Bein nicht gegen die Schwerkraft (von der Unterlage) anheben.<br/><br/></small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Nicht beurteilbar rechts" score="0" name="motor_skill_rechts">Nicht beurteilbar rechts
+											        <small class="small">Nur wählen bei Amputation, Versteifung o.ä.</small>
+											    </label>
+
+											</div>
+											<!--Radio butons-->
+										</div>
+										<div class="col-sm-6 col-6 right" side="right">
+											<!--Radio butons-->
+											<div class="btn-group" data-toggle="buttons">
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Normal links" score="0" name="motor_skill_links">Normal links
+											        <small class="small">Kein Absinken innerhalb von ca. 5 Sekunden.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Absinken links" score="1" name="motor_skill_links">Absinken links
+											        <small class="small">Absinken des Beines, jedoch noch ohne Berühren der Unterlage.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Kein Anheben links" score="2" name="motor_skill_links">Kein Anheben links
+											        <small class="small">Das Bein sinkt auf die Unterlage oder der Patient kann das Bein nicht gegen die Schwerkraft (von der Unterlage) anheben oder das Bein ist vollständig gelähmt.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label exam">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Nicht beurteilbar links" score="0" name="motor_skill_links">Nicht beurteilbar links
+											        <small class="small">Nur wählen bei Amputation, Versteifung o.ä.</small>
+											    </label>
+
+											</div>
+											<!--Radio butons-->
+										</div>
+									</div>
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Sprache</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="language">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Beurteilen Sie die Sprache im Gespräch mit dem Patienten.</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" score="0" name="language">Normalbefund
+									        <small class="small">Sprache erscheint normal. Kommunikation/Unterhaltung uneingeschränkt möglich.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Kommunikation eingeschränkt" score="1" name="language">Sprache gestört
+											<small class="small">Sprache erscheint gestört, aber eine Kommunikation/Unterhaltung mit dem Patienten ist noch möglich.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Keine Kommunikation möglich" score="2" name="language">Keine Kommunikation möglich
+									        <small class="small">Schwere Sprachstörung, eine sinnhafte Kommunikation mit dem Patienten ist nicht möglich. Oder: Patient stumm einschließlich Koma.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Dysarthrie</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="dysarthria">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Beurteilen Sie, ob die Aussprache des Patienten deutlich ist. Lassen Sie den Patienten einen kurzen Satz oder einfachen Zungenbrecher nachsprechen, z.B.: „Rasend rasantes Rumpelstielschen“</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" score="0" name="dysarthria">Normalbefund
+									        <small class="small">Deutliche/ungestörte Aussprache.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Verwaschene Sprache" score="1" name="dysarthria">Undeutliche Sprache
+									        <small class="small">Die Aussprache ist undeutlich oder verwaschen, aber zumindest teilweise noch verständlich.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Unverständlich oder stumm" score="2" name="dysarthria">Unverständlich oder stumm
+									        <small class="small">Einschließlich: Koma oder gänzlich fehlender Sprachproduktion.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Platzhalter (Eingabe des FASTER-Score / Untersuchung des Patienten)</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							<br>
+							<h4>Bitte hier Titelfolie mit FASTER-Logo zur Anwahl zum Beginn der Eingabe des Scores</h4>
+							<br>
+							<div class="image">
+								<h5>„Zur des FASTER-Score“</h5>
+								<img src="img/faster_logo.png" alt="" width="100%">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Ergebnis</h1>
+					</div>
+					<div class="container-fluid text-center">
+						<br/>
+						<h3>Auswertungsergebnis des FASTER-SCORE</h3>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							
+								<div class="rgebnis">
+									
+									<h3 class="score">0</h3>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label exam">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="0" score="0" name="next">Nächster
+									    </label>
+
+									    <input type="hidden" class="count_score" value="0" />
+									</div>
+									<!--Radio butons-->
+								</div>
+							         
+						</div>       
+					</div>
+				</div>
+			</div>
+
+			<div id="page" class="swiper-slide 6" page="6">
+				<div class="content wow slideInRight">
+					<a href="#" class="go-to-back text-center" style="display: block;"><i class="fa fa-angle-left"></i>&nbsp;zurück</a>
+					<div class="banner-section">
+						<h1>Datenübermittlung</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+								<div class="target-clinic">
+									<h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3>
+
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+										<select name="target_clinic" id="choose-office" class="form-control target_clinic">
+											<!--
+											<option value="UKSH Kiel">UKSH Kiel</option>
+											<option value="UKSH Lübeck" >UKSH Lübeck</option>
+										-->
+										</select>
+										<!-- <label class="btn btn-cyan btn-rounded form-check-label clinic">
+                                            <input class="form-check-input target_clinic" type="radio" autocomplete="off" value="UKSH Kiel" name="target_clinic" tele="9851128350">UKSH Kiel
+
+                                        </label> -->
+
+										<!-- <label class="btn btn-cyan btn-rounded form-check-label clinic">
+                                            <input class="form-check-input target_clinic" type="radio" autocomplete="off" value="UKSH Lübeck" name="target_clinic" tele="9803074864">UKSH Lübeck
+                                        </label> -->
+
+									</div>
+									<!--Radio butons-->
+								</div>
+
+								<div class="arrival-time">
+									<h3 class="mb-5 mt-4 font-weight-bold">Voraussichtliche Ankunft in der Zielklinik</h3>
+
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+										<label class="expected-time btn btn-cyan btn-rounded form-check-label md-form">
+											<input type="number" id="input_starttime" class="form-control time_to_hospital"><span>Min</span>
+										</label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+
+								<div class="data-transmission">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Datenübermittlung</h3> -->
+									<input type="submit" name="data_transmission" class="btn btn-primary" id="submit" value="Datenübermittlung">
+									<br>
+									<select name="choose_num" id="choose-num" class="form-control">
+										<!--
+										<option value="Num 1">Num 1</option>
+										<option value="Num 2">Num 2</option>
+									-->
+									</select>
+									<a href="#" class="btn btn-primary call-hospital" style="display: none;">Zielklinik anrufen</a>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</form>
+	
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<!--<script type="text/javascript" src="js/jquery.timepicker.min.js"></script>-->
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/pages/slider.js"></script>
+</body>
+</html>

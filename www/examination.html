@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>UKSH</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/mdb.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/mdtimepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<!-- Import Font Awesome -->
+	<!-- <script type="text/javascript" src="js/fontawesome-all.min.js"></script> -->
+</head>
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<div class="banner-section">
+						<h1>Prüfung des Bewusstseins</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							<form>
+								<div class="examination">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Sprechen Sie den Patienten laut an, rütteln Sie ihn fest an der Schulter, setzen Sie ggf. einen leichten Schmerzreiz.</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" name="examination">Normalbefund
+									        <small class="small">Der Patient ist wach.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Somnolenter Patient" name="examination">Somnolenter Patient
+									        <small class="small">Müder Patient, schläft nach Ansprache/Stimulation wieder ein.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Keine Reaktion" name="examination">Keine Reaktion
+									        <small class="small">Koma odKeine Reaktion er kein Öffnen der Augen oder nur ungezielte Abwehrbewegungen.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							</form>         
+						</div>       
+					</div>
+				</div>
+			</div>
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<div class="banner-section">
+						<h1>Orientierung</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							<form>
+								<div class="orientation">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Fragen Sie den Patienten nach seinem Alter und dem Monat.</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" name="orientation">Normalbefund
+									        <small class="small">2 korrekte Antworten.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="1 korrekte Antwort" name="orientation">1 korrekte Antwort
+									        <!-- <small class="small">Müder Patient, schläft nach Ansprache/Stimulation wieder ein.</small> -->
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Keine korrekte Antwort" name="orientation">Keine korrekte Antwort
+									        <small class="small">Patient antwortet falsch oder Patient ist stumm (z.B. aufgrund Koma, schwerer Sprachstörung)</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							</form>         
+						</div>       
+					</div>
+				</div>
+			</div>
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<div class="banner-section">
+						<h1>Kooperation</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							<form>
+								<div class="cooperation">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Lassen Sie den Patienten 2 Aufforderungen befolgen: „Schließen Sie eine Faust!“ (nicht-gelähmte Seite), „Schließen Sie die Augen!“</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" name="cooperation">Normalbefund
+									        <small class="small">Patient befolgt beide Aufforderungen korrekt.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="1 korrekte Antwort" name="cooperation">1 Aufforderung korrekt befolgt
+									        <!-- <small class="small">Müder Patient, schläft nach Ansprache/Stimulation wieder ein.</small> -->
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Keine korrekte Antwort" name="cooperation">Keine Aufforderung korrekt befolgt
+									        <small class="small">Einschließlich: Fehlende Mitarbeit infolge Koma oder schwerer Sprachstörung.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							</form>         
+						</div>       
+					</div>
+				</div>
+			</div>
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<div class="banner-section">
+						<h1>Horizontale Blickbewegungen</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							<form>
+								<div class="eye-movement">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Beobachten Sie den Patienten, lassen Sie den Patienten nach links und rechts schauen. Prüfen Sie ggf., ob der Patient dem Untersucher mit den Augen folgt (ggf. unter Fixieren des Kopfes).</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" name="eye_movement">Normalbefund
+									        <small class="small">Keine Blickwendung. Patient folgt dem Untersucher mit den Augen zu beiden Seiten.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="1 korrekte Antwort" name="eye_movement">Blickwendung
+									        <small class="small">Der Patient schaut – mit den Augen oder dem ganzen Kopf - zu einer Seite. Dies kann kurzzeitig überwindbar oder nicht überwindbar (=fixierte Blickwendung) sein.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							</form>         
+						</div>       
+					</div>
+				</div>
+			</div>
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<div class="banner-section">
+						<h1>Mimik</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							<form>
+								<div class="facial-expression">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Fordern Sie den Patienten auf, zu Lächeln oder die Zähne zu zeigen.</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" name="facial_expression">Normalbefund
+									        <small class="small">Symmetrische Bewegung des Gesichtes.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="1 korrekte Antwort" name="facial_expression">Leichte Asymmetrie
+									        <small class="small">Leichte einseitige Lähmung einer Gesichtshälfte oder die Gesichtsbewegungen erscheinen asymmetrisch .</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Keine korrekte Antwort" name="facial_expression">Deutliche Asymmetrie
+									        <small class="small">Deutliche einseitige Lähmung des unteren Anteiles des Gesichtes oder der ganzen Gesichtshälfte.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							</form>         
+						</div>       
+					</div>
+				</div>
+			</div>
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<div class="banner-section">
+						<h1>Armmotorik</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							<form>
+								<div class="armmotorik two-column">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Fordern Sie den Patienten auf, gleichzeitig beide Arme für 10 Sekunden nach vorn zu strecken (ca. 45°). Beide Seiten müssen beurteilt werden. Bei Sprachstörung bringen Sie die Arme passiv in diese Position.</p>
+									<div class="row">
+										<div class="col-sm-6 col-6 left" side="left">
+											<!--Radio butons-->
+											<div class="btn-group" data-toggle="buttons">
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Normal rechts" name="armmotorik_rechts">Normal rechts
+											        <small class="small">Kein Absinken innerhalb von ca. 10 Sekunden.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Absinken rechts" name="armmotorik_rechts">Absinken rechts
+											        <small class="small">Absinken des Armes, jedoch noch ohne Berühren der Unterlage.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Kein Anheben rechts" name="armmotorik_rechts">Kein Anheben rechts
+											        <small class="small">Der Arm sinkt auf die Unterlage oder der Patient kann den Arm nicht von der Unterlage anheben oder der Arm ist vollständig gelähmt.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Nicht beurteilbar rechts" name="armmotorik_rechts">Nicht beurteilbar rechts
+											        <small class="small">Nur wählen bei Amputation, Versteifung o.ä.</small>
+											    </label>
+
+											</div>
+											<!--Radio butons-->
+										</div>
+										<div class="col-sm-6 col-6 right" side="right">
+											<!--Radio butons-->
+											<div class="btn-group" data-toggle="buttons">
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Normal links" name="armmotorik_links">Normal links
+											        <small class="small">Kein Absinken innerhalb von ca. 10 Sekunden.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Absinken links" name="armmotorik_links">Absinken links
+											        <small class="small">Absinken des Armes, jedoch noch ohne Berühren der Unterlage.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Kein Anheben links" name="armmotorik_links">Kein Anheben links
+											        <small class="small">Der Arm sinkt auf die Unterlage oder der Patient kann den Arm nicht von der Unterlage anheben oder der Arm ist vollständig gelähmt.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Nicht beurteilbar links" name="armmotorik_links">Nicht beurteilbar links
+											        <small class="small">Nur wählen bei Amputation, Versteifung o.ä.</small>
+											    </label>
+
+											</div>
+											<!--Radio butons-->
+										</div>
+									</div>
+								</div>
+							</form>         
+						</div>       
+					</div>
+				</div>
+			</div>
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<div class="banner-section">
+						<h1>Beinmotorik</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							<form>
+								<div class="motor-skills  two-column">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Fordern Sie den Patienten auf, beide Beine einzeln mit ca. 30° für 5 Sekunden anzuheben. Beide Seiten müssen beurteilt werden. Bei Sprachstörung bringen Sie die Beine einzeln passiv in diese Position.</p>
+									<div class="row">
+										<div class="col-sm-6 col-6 left" side="left">
+											<!--Radio butons-->
+											<div class="btn-group" data-toggle="buttons">
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Normal rechts" name="motor_skill_rechts">Normal rechts
+											        <small class="small">Kein Absinken innerhalb von ca. 5 Sekunden.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Absinken rechts" name="motor_skill_rechts">Absinken rechts
+											        <small class="small">Absinken des Beines, jedoch noch ohne Berühren der Unterlage.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Kein Anheben rechts" name="motor_skill_rechts">Kein Anheben rechts
+											        <small class="small">Das Bein sinkt auf die Unterlage oder der Patient kann das Bein nicht gegen die Schwerkraft (von der Unterlage) anheben oder das Bein ist vollständig gelähmt.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Nicht beurteilbar rechts" name="motor_skill_rechts">Nicht beurteilbar rechts
+											        <small class="small">Nur wählen bei Amputation, Versteifung o.ä.</small>
+											    </label>
+
+											</div>
+											<!--Radio butons-->
+										</div>
+										<div class="col-sm-6 col-6 right" side="right">
+											<!--Radio butons-->
+											<div class="btn-group" data-toggle="buttons">
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Normal links" name="motor_skill_links">Normal links
+											        <small class="small">Kein Absinken innerhalb von ca. 5 Sekunden.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Absinken links" name="motor_skill_links">Absinken links
+											        <small class="small">Absinken des Beines, jedoch noch ohne Berühren der Unterlage.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Kein Anheben links" name="motor_skill_links">Kein Anheben links
+											        <small class="small">Das Bein sinkt auf die Unterlage oder der Patient kann das Bein nicht gegen die Schwerkraft (von der Unterlage) anheben oder das Bein ist vollständig gelähmt.</small>
+											    </label>
+
+											    <label class="btn btn-cyan btn-rounded form-check-label">
+											        <input class="form-check-input" type="radio" autocomplete="off" value="Nicht beurteilbar links" name="motor_skill_links">Nicht beurteilbar links
+											        <small class="small">Nur wählen bei Amputation, Versteifung o.ä.</small>
+											    </label>
+
+											</div>
+											<!--Radio butons-->
+										</div>
+									</div>
+								</div>
+							</form>         
+						</div>       
+					</div>
+				</div>
+			</div>
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<div class="banner-section">
+						<h1>Sprache</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							<form>
+								<div class="language">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Lassen Sie den Patienten 2 einfache Gegenstände benennen (z.B. Kugelschreiber, Armbanduhr). Beurteilen Sie die Sprache im Gespräch mit dem Patienten.</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" name="language">Normalbefund
+									        <small class="small">Patient benennt Gegenstände korrekt. Kommunikation uneingeschränkt möglich.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Kommunikation eingeschränkt" name="language">Kommunikation eingeschränkt
+									        <small class="small">Teilweise fehlerhaftes Benennen und/oder das Gespräch ist teilweise beeinträchtigt.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Keine Kommunikation möglich" name="language">Keine Kommunikation möglich
+									        <small class="small">Schwere Sprachstörung, eine Kommunikation mit dem Patienten ist schwer gestört oder überhaupt nicht möglich.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							</form>         
+						</div>       
+					</div>
+				</div>
+			</div>
+			<div id="page" class="swiper-slide exam">
+				<div class="content wow slideInRight">
+					<div class="banner-section">
+						<h1>Dysarthrie</h1>
+					</div>
+					<div class="entry-section">
+						<div class="container-fluid text-center">
+							<form>
+								<div class="dysarthria">
+									<!-- <h3 class="mb-5 mt-4 font-weight-bold">Auswahl der Zielklinik</h3> -->
+									<p>Beurteilen Sie die Artikulation, bzw. ob die Aussprache des Patienten deutlich ist. Lassen Sie den Patienten hierzu einen kurzen Satz oder einfachen Zungenbrecher nachsprechen, z.B.: „Rasend rasantes Rumpelstielschen“</p>
+									
+									<!--Radio butons-->
+									<div class="btn-group" data-toggle="buttons">
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Normalbefund" name="dysarthria">Normalbefund
+									        <small class="small">Deutliche/ungestörte Aussprache.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Verwaschene Sprache" name="dysarthria">Verwaschene Sprache
+									        <small class="small">Die Aussprache ist verwaschen, aber zumindest teilweise noch verständlich.</small>
+									    </label>
+
+									    <label class="btn btn-cyan btn-rounded form-check-label">
+									        <input class="form-check-input" type="radio" autocomplete="off" value="Unverständlich oder stumm" name="dysarthria">Unverständlich oder stumm
+									        <small class="small">Eine Kommunikation ist nicht möglich. Einschließlich: Koma oder gänzlich fehlender Sprachproduktion.</small>
+									    </label>
+
+									</div>
+									<!--Radio butons-->
+								</div>
+							</form>         
+						</div>       
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/mdtimepicker.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/pages/examination.js"></script>
+</body>
+</html>
